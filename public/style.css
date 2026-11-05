@@ -1,5 +1,5 @@
 
-// colours and font for hairstyling website
+<!-- colours and font for hairstyling website
 :root {
   --blush: #f6e4e1;
   --blush-deep: #e9c4bd;
@@ -9,8 +9,8 @@
   --ink: #3b2f2f;
   --white: #fffaf8;
  
-  --font-heading: "Italiana", "Didot", Georgia, serif;
-  --font-body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 }
  
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,7 +32,7 @@ h1, h2, h3, .logo {
 img { max-width: 100%; display: block; }
 a { color: inherit; }
  
-// header and navigation
+/* header and navigation */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -62,7 +62,7 @@ a { color: inherit; }
  
 .menu-toggle { display: none; }
  
-// buttons
+/* buttons */
 .btn {
   display: inline-block;
   padding: 0.85rem 1.8rem;
@@ -83,7 +83,7 @@ a:focus-visible, button:focus-visible {
   outline-offset: 3px;
 }
  
-// hero section
+/* hero section */
 .hero {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -106,7 +106,7 @@ a:focus-visible, button:focus-visible {
  
 .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
  
-// gallery photo fram
+/* gallery photo frame */
 .hero-image {
   position: relative;
   aspect-ratio: 4 / 5;
@@ -130,7 +130,7 @@ a:focus-visible, button:focus-visible {
   border-radius: 999px 999px 0 0;
 }
  
-// services
+/* services */
 .services { padding: 5rem 6vw; }
  
 .services h2 {
@@ -156,7 +156,7 @@ a:focus-visible, button:focus-visible {
   margin-bottom: 0.6rem;
 }
  
-// call to action
+/* call to action */
 .cta {
   text-align: center;
   padding: 5rem 6vw;
@@ -166,7 +166,7 @@ a:focus-visible, button:focus-visible {
 .cta h2 { font-size: 2.6rem; margin-bottom: 0.5rem; }
 .cta p { margin-bottom: 2rem; }
  
-// footer
+/* footer */
 .site-footer {
   text-align: center;
   padding: 3rem 6vw;
@@ -216,7 +216,7 @@ a:focus-visible, button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
-//404 error page
+<!-- error page -->
 .error-page {
   min-height: 60vh;
   display: flex;
@@ -244,5 +244,101 @@ a:focus-visible, button:focus-visible {
 .error-page p { max-width: 34rem; margin-bottom: 2rem; }
  
 .error-page .hero-buttons { justify-content: center; }
+ 
+.gallery {
+  padding: 4rem 6vw;
+  background: var(--blush);
+  text-align: center;
+}
+ 
+.gallery h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  margin-bottom: 0.5rem;
+}
+ 
+.gallery-intro { margin-bottom: 2.5rem; }
+ 
+/* The scrolling row of photos */
+.gallery-track {
+  display: flex;
+  gap: 2.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 20px 20px 1.5rem; /* room so the gold outline isn't cut off */
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-light) transparent;
+}
+ 
+.gallery-item {
+  flex: 0 0 280px;
+  scroll-snap-align: center;
+}
+ 
+/* Same arched frame as the homepage photo */
+.arch-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 999px 999px 0 0;
+  background: var(--blush-deep); /* shows until the photo loads */
+}
+ 
+.arch-frame::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border: 1px solid var(--gold);
+  border-radius: 999px 999px 0 0;
+  pointer-events: none;
+}
+ 
+.arch-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 999px 999px 0 0;
+}
+ 
+.gallery-item figcaption {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--rose);
+  margin-top: 1.5rem;
+}
+ 
+/* Arrow buttons */
+.gallery-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+ 
+.gallery-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+ 
+.gallery-arrow:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+ 
+/* Phones: slightly smaller photos */
+@media (max-width: 760px) {
+  .gallery-item { flex-basis: 230px; }
+  .gallery-track { gap: 2rem; }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .gallery-track { scroll-behavior: auto; }
+}
  
  
