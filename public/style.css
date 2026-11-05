@@ -1,5 +1,5 @@
 
-<!-- colours and font for hairstyling website
+/* colours and font for hairstyling website */
 :root {
   --blush: #f6e4e1;
   --blush-deep: #e9c4bd;
@@ -9,8 +9,8 @@
   --ink: #3b2f2f;
   --white: #fffaf8;
  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  --font-heading: “Cormorant Garamond”, Georgia, serif;
+  --font-body: “Inter”, Arial, sans-serif;
 }
  
 * { box-sizing: border-box; margin: 0; padding: 0; }
