@@ -18,18 +18,22 @@
     <link rel="stylesheet" href="/style.css">
  </head>
   <body>
- <header>
-      <div class="container nav">
-        <a href="#top" class="brand" aria-label="Hair by Nechama home">Hair by <span>Nechama</span></a>
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a class="button primary" href="#contact">Book Now</a>
-      </div>
-    </header>
+ <header class="site-header">
+  <a href="/" class="logo" aria-label="Hair by Nechama home">Hair by Nechama</a>
+ 
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+ 
+  <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+    <a href="/" class="active">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/gallery.html">Gallery</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+ 
+  <a href="/contact.html" class="btn btn-gold">Book Now</a>
+</header>
+ 
 
       <main class="error-page">
     <p class="error-code">404</p>
@@ -42,9 +46,7 @@
   </main>
  
        <footer>
-      <div class="container footer-inner">
-        <div class="footer-brand">Hair by Nechama</div>
-         <p class="logo">Hair by Nechama; Gold</p>
+     <footer class="site-footer">
     <p>Bridal hairstyling across Johannesburg</p>
     <p class="small">&copy; Hair by Nechama</p>
       </div>
